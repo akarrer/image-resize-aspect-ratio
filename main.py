@@ -15,7 +15,7 @@ def resizeImage(numPixels, imagePath):
         aspectRatio = currentImageWidth / float(currentImageHeight)
         newWidth = math.floor(math.sqrt(numPixels / aspectRatio))
         newHeight = math.floor(aspectRatio * newWidth)
-        newImage = img.resize((newHeight, newWidth), resample=PIL.Image.ANTIALIAS)
+        newImage = img.resize((newHeight, newWidth), resample=PIL.Image.BOX)
         newImage.save("parrotBOX.jpg")
 
 
