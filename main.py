@@ -22,4 +22,3 @@ def resizeImage(numPixels, imagePath):
 desktop = os.path.join(os.path.join(os.environ['USERPROFILE']), "Desktop")
 fullFileName = os.path.join(desktop, "parrot.jpg")
 resizeImage(2814, fullFileName)
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
