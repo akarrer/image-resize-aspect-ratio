@@ -18,7 +18,6 @@ def resizeImage(numPixels, imagePath):
         newImage.save("parrotLANCZOS.jpg", quality=99)
         imgSharpened = newImage.filter(ImageFilter.SHARPEN)
         imgSharpened.save("parrotsharpened2.jpg")
-        return imgSharpened.path.
 
 desktop = os.path.join(os.path.join(os.environ['USERPROFILE']), "Desktop")
 fullFileName = os.path.join(desktop, "parrot.jpg")
