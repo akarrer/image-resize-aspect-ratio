@@ -3,10 +3,8 @@
 
 import os, sys
 import PIL.Image
-from PIL import Image
+from PIL import Image, ImageFilter
 import math
-
-
 
 def resizeImage(numPixels, imagePath):
     with Image.open(imagePath) as img:
@@ -15,9 +13,12 @@ def resizeImage(numPixels, imagePath):
         aspectRatio = currentImageWidth / float(currentImageHeight)
         newWidth = math.floor(math.sqrt(numPixels / aspectRatio))
         newHeight = math.floor(aspectRatio * newWidth)
-        newImage = img.resize((newHeight, newWidth), resample=PIL.Image.BOX)
-        newImage.save("parrotBOX.jpg")
+        newImage = img.resize((newHeight, newWidth), resample=PIL.Image.LANCZOS)
 
+        newImage.save("parrotLANCZOS.jpg", quality=99)
+        imgSharpened = newImage.filter(ImageFilter.SHARPEN)
+        imgSharpened.save("parrotsharpened2.jpg")
+        return imgSharpened.path.
 
 desktop = os.path.join(os.path.join(os.environ['USERPROFILE']), "Desktop")
 fullFileName = os.path.join(desktop, "parrot.jpg")
