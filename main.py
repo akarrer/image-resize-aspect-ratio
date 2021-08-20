@@ -14,7 +14,6 @@ def resizeImage(numPixels, imagePath):
         newWidth = math.floor(math.sqrt(numPixels / aspectRatio))
         newHeight = math.floor(aspectRatio * newWidth)
         newImage = img.resize((newHeight, newWidth), resample=PIL.Image.LANCZOS)
-
         newImage.save("parrotLANCZOS.jpg", quality=99)
         imgSharpened = newImage.filter(ImageFilter.SHARPEN)
         imgSharpened.save("parrotsharpened2.jpg")
