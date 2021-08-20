@@ -1,4 +1,4 @@
-# image resize app
+# this app resizes an image while maintaining the aspect ratio
 
 
 import os, sys
