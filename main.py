@@ -1,6 +1,5 @@
 # this app resizes an image while maintaining the aspect ratio
 
-
 import os, sys
 import PIL.Image
 from PIL import Image, ImageFilter
